@@ -6,4 +6,25 @@
 
 body{
     background-color: #000000;
+    margin: 0;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.board{
+    background-color: #031710;
+    display: grid;
+    grid-template-columns: repeat(3, 200px);
+    grid-template-rows: repeat(3, 200px);
+    width: 620px;
+    height: 620px;
+    gap: 10px;
+}
+.box{
+    background-color: #5fecc0 ;
+    width: 200px;
+    height: 200px;
 }
