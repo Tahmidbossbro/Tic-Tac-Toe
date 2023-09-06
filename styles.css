@@ -25,6 +25,10 @@ body{
 }
 .box{
     background-color: #5fecc0 ;
+    font-size: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 200px;
     height: 200px;
 }
@@ -40,5 +44,7 @@ body{
     .box{
         height: 100px;
         width: 100px;
+        font-size: 100px;
     }
+
 }
