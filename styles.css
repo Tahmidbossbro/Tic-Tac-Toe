@@ -23,6 +23,16 @@ button {
     outline: var(--b) solid #0000;
     outline-offset: .2em;
   }
+  /* button:hover,
+  button:focus-visible{
+    --_p: 0px;
+    outline-color: var(--c);
+    outline-offset: .05em;
+  } */
+  button:active {
+    background: var(--c);
+    color: #fff;
+  }
   button {
     font-family: system-ui, sans-serif;
     font-weight: bold;
