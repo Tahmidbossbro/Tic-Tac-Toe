@@ -4,82 +4,129 @@
 --secondary: #031710;
 --accent: #18cd94; */
 
-body{
-    background-color: #000000;
-    margin: 0;
+body {
+  background-color: #000000;
+  margin: 0;
 }
 button {
-    --b: 3px;   /* border thickness */
-    --s: .15em; /* size of the corner */
-    --c: #BD5532;
-    
-    padding: calc(.05em + var(--s)) calc(.3em + var(--s));
-    color: var(--c);
-    --_p: var(--s);
-    background:
-      conic-gradient(from 90deg at var(--b) var(--b),#0000 90deg,var(--c) 0)
-      var(--_p) var(--_p)/calc(100% - var(--b) - 2*var(--_p)) calc(100% - var(--b) - 2*var(--_p));
-    transition: .3s linear, color 0s, background-color 0s;
-    outline: var(--b) solid #0000;
-    outline-offset: .2em;
+  --b: 3px; /* border thickness */
+  --s: 0.15em; /* size of the corner */
+  --c: #bd5532;
+
+  padding: calc(0.05em + var(--s)) calc(0.3em + var(--s));
+  color: var(--c);
+  --_p: var(--s);
+  background: conic-gradient(
+      from 90deg at var(--b) var(--b),
+      #0000 90deg,
+      var(--c) 0
+    )
+    var(--_p) var(--_p) / calc(100% - var(--b) - 2 * var(--_p))
+    calc(100% - var(--b) - 2 * var(--_p));
+  transition: 0.3s linear, color 0s, background-color 0s;
+  outline: var(--b) solid #0000;
+  outline-offset: 0.2em;
+}
+
+button:active {
+  background: var(--c);
+  color: #fff;
+}
+button {
+  font-family: system-ui, sans-serif;
+  font-weight: bold;
+  font-size: 4rem;
+  cursor: pointer;
+  border: none;
+  margin: 0.1em;
+}
+.button-container {
+  margin-top: 50px;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+}
+.board {
+  background-color: #32715d;
+  display: grid;
+  grid-template-columns: repeat(3, 200px);
+  grid-template-rows: repeat(3, 200px);
+  width: 620px;
+  height: 620px;
+  gap: 10px;
+}
+.box {
+  background-color: #5fecc0;
+  position: relative;
+  font-size: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 200px;
+}
+/* Display Winner Line */
+.line_1 {
+  position: absolute;
+  width: 220px;
+  height: 10px;
+  background-color: black;
+}
+.line_2 {
+  position: absolute;
+  width: 10px;
+  height: 220px;
+  background-color: black;
+}
+.line_3 {
+  position: absolute;
+  width: 300px;
+  height: 10px;
+  background-color: black;
+  transform: rotate(-45deg);
+}
+.line_4 {
+    position: absolute;
+    width: 300px;
+    height: 10px;
+    background-color: black;
+    transform: rotate(45deg);
+}
+
+@media only screen and (max-width: 680px) {
+  .board {
+    width: 310px;
+    height: 310px;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 5px;
   }
-
-  button:active {
-    background: var(--c);
-    color: #fff;
+  .box {
+    height: 100px;
+    width: 100px;
+    font-size: 100px;
   }
-  button {
-    font-family: system-ui, sans-serif;
-    font-weight: bold;
-    font-size: 4rem;
-    cursor: pointer;
-    border: none;
-    margin: .1em;
+  /* Display Winner Line */
+  .line_1 {
+    width: 110px;
+    height: 10px;
   }
-.button-container{
-    margin-top: 50px;
+  .line_2 {
+    width: 10px;
+    height: 110px;
+  }
+  .line_3 {
+    width: 150px;
+    height: 10px;
+    transform: rotate(-45deg);
+  }
+  .line_4 {
+    width: 150px;
+    height: 10px;
+    transform: rotate(45deg);
+  }
 }
-.container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    height: 100vh;
-}
-.board{
-    background-color: #32715d;
-    display: grid;
-    grid-template-columns: repeat(3, 200px);
-    grid-template-rows: repeat(3, 200px);
-    width: 620px;
-    height: 620px;
-    gap: 10px;
-}
-.box{
-    background-color: #5fecc0 ;
-    font-size: 200px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 200px;
-    height: 200px;
-}
-
-@media only screen and (max-width: 680px){
-    .board{
-        width: 310px;
-        height: 310px;
-        grid-template-columns: repeat(3, 100px);
-        grid-template-rows: repeat(3, 100px);
-        gap: 5px;
-    }
-    .box{
-        height: 100px;
-        width: 100px;
-        font-size: 100px;
-    }
-
-}
-
-/* Animation */
-
