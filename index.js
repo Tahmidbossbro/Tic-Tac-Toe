@@ -1,9 +1,7 @@
 let boxes = document.querySelectorAll(".box");
 
 var current_symbol = "";
-
-let winner_mode_1 = "XXX";
-let winner_mode_2 = "OOO";
+var total_clicks = 0;
 
 function activateClickers() {
   for (var i = 0; i < boxes.length; i++) {
@@ -14,6 +12,7 @@ function activateClickers() {
 function eventHandler() {
   this.removeEventListener("click", eventHandler);
   this.textContent = current_symbol;
+  total_clicks ++;
   checkWinner(this.classList[1]);
   if (current_symbol === "X") {
     current_symbol = "O";
@@ -150,6 +149,9 @@ function checkWinner(target) {
   }
   if (winner_decided){
     document.querySelector('h1').textContent = current_symbol+ " Wins!";
+  }
+  else if (winner_decided == false && total_clicks == 9){
+    document.querySelector('h1').textContent = "Draw!";
   }
   
 }
