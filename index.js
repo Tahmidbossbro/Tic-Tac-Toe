@@ -62,6 +62,7 @@ function checkWinner(target) {
   var need_to_check_col = false;
   var need_to_check_dia_1 = false;
   var need_to_check_dia_2 = false;
+  var winner_decided = false;
 
   // Row Checker
   for (let i = 0; i < rows.length; i++) {
@@ -74,6 +75,7 @@ function checkWinner(target) {
       if (row_data[0] === row_data[1] && row_data[0] === row_data[2]) {
         console.log("Winner! in Row " + (i + 1));
         disableAllListeners();
+        winner_decided = true;
       } else {
         need_to_check_col = true;
       }
@@ -96,6 +98,7 @@ function checkWinner(target) {
         ) {
           console.log("Winner! in Column " + (i + 1));
           disableAllListeners();
+          winner_decided = true;
         } else {
           need_to_check_dia_1 = true;
         }
@@ -118,6 +121,7 @@ function checkWinner(target) {
     ) {
       console.log("Winner! in Diagonal 1");
       disableAllListeners();
+      winner_decided = true;
     } else {
       need_to_check_dia_2 = true;
     }
@@ -139,8 +143,13 @@ function checkWinner(target) {
     ) {
       console.log("Winner! in Diagonal 2");
       disableAllListeners();
+      winner_decided = true;
     }
 
     console.log("Diagonal 2 Checked");
   }
+  if (winner_decided){
+    document.querySelector('h1').textContent = current_symbol+ " Wins!";
+  }
+  
 }
