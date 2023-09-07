@@ -106,6 +106,9 @@ button {
     grid-template-rows: repeat(3, 100px);
     gap: 5px;
   }
+  .container{
+    height: 100vh;
+  }
   .box {
     height: 100px;
     width: 100px;
