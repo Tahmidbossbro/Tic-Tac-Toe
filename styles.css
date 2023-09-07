@@ -7,6 +7,7 @@
 body {
   background-color: #000000;
   margin: 0;
+  
 }
 button {
   --b: 3px; /* border thickness */
@@ -48,7 +49,7 @@ button {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  height: 100vh;
+  height: 110vh;
 }
 .board {
   background-color: #32715d;

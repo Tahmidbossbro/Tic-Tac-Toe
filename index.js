@@ -1,3 +1,4 @@
+document.body.style.zoom = "90%";
 let boxes = document.querySelectorAll(".box");
 
 var current_symbol = "";
