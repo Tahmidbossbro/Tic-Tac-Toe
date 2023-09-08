@@ -49,7 +49,7 @@ button {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  height: 110vh;
+  height: 100vh;
 }
 .board {
   background-color: #32715d;
@@ -97,7 +97,24 @@ button {
     background-color: black;
     transform: rotate(45deg);
 }
+/* For laptop Screens */
 
+@media only screen and (max-width: 1980px) {
+  .board {
+    width: 440px;
+    height: 440px;
+    grid-template-columns: repeat(3, 140px);
+    grid-template-rows: repeat(3, 140px);
+    gap: 10px;
+  }
+  .box {
+    height: 140px;
+    width: 140px;
+    font-size: 100px;
+  }
+}
+
+/* For Mobile Screens */
 @media only screen and (max-width: 680px) {
   .board {
     width: 310px;
@@ -106,9 +123,7 @@ button {
     grid-template-rows: repeat(3, 100px);
     gap: 5px;
   }
-  .container{
-    height: 100vh;
-  }
+
   .box {
     height: 100px;
     width: 100px;
@@ -134,3 +149,4 @@ button {
     transform: rotate(45deg);
   }
 }
+

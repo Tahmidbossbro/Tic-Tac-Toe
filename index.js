@@ -1,4 +1,3 @@
-document.body.style.zoom = "90%";
 var originalHtml = document.body.innerHTML;
 
 function gameOn() {
